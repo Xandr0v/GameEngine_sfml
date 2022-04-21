@@ -53,12 +53,12 @@ void Window::updateWindow()
 	}
 	
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) { viewMove(sf::Vector2f( 0     ,  speed )); }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) { viewMove(sf::Vector2f( 0     , -speed )); }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) { viewMove(sf::Vector2f( 0     , -speed )); }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) { viewMove(sf::Vector2f( 0     ,  speed )); }
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) { viewMove(sf::Vector2f(  speed, 0      )); }
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) { viewMove(sf::Vector2f( -speed, 0      )); }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) { angle += rotationSpeed; }
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) { angle -= rotationSpeed; }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) { angle -= rotationSpeed; }
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) { angle += rotationSpeed; }
 }
 
 sf::Vector2f Window::getMousePos()
@@ -106,6 +106,6 @@ void Window::updateRotation()
 
 void Window::updateZoom()
 {
-	view.setSize(size.x * zoom, -size.y * zoom);
+	view.setSize(size.x * zoom, size.y * zoom);
 	window.setView(view);
 }
